@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.delifood">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,9 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DeliFood"
         tools:targetApi="31">
-        <activity
-            android:name=".Activities.DetailedDailyMealActivity"
-            android:exported="false" />
 
         <activity
             android:name=".Activities.RegistrationActivity"
@@ -34,7 +33,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.DeliFood.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
