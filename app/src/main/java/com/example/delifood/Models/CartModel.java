@@ -1,20 +1,19 @@
 package com.example.delifood.Models;
 
-public class FeaturedVerModel {
+public class CartModel {
 
     private int image;
     private String name;
-    private String description;
+    private String price;
     private String rating;
-    private String time;
 
-    public FeaturedVerModel(int image, String name, String description, String rating, String time) {
+    public CartModel(int image, String name, String price, String rating) {
         this.image = image;
         this.name = name;
-        this.description = description;
+        this.price = price;
         this.rating = rating;
-        this.time = time;
     }
+
 
     public int getImage() {
         return image;
@@ -32,12 +31,12 @@ public class FeaturedVerModel {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getPrice() {
+        return price;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public String getRating() {
@@ -46,13 +45,5 @@ public class FeaturedVerModel {
 
     public void setRating(String rating) {
         this.rating = rating;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 }

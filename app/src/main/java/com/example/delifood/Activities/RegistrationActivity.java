@@ -20,12 +20,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
 
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
-//            }
-//        });
     }
 
     public void login(View view) {

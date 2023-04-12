@@ -51,13 +51,13 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
         if(check) {
             ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
             homeVerModels.add(new HomeVerModel(R.drawable.pizza1,
-                    "Pizza 1", "10:00 - 23:00", "4.9", "Min - $35"));
+                    "Pizza 1", "10:00 - 23:00", "4.9", "35"));
             homeVerModels.add(new HomeVerModel(R.drawable.pizza2,
-                    "Pizza 2", "10:00 - 23:00", "4.9", "Min - $35"));
+                    "Pizza 2", "10:00 - 23:00", "4.9", "35"));
             homeVerModels.add(new HomeVerModel(R.drawable.pizza3,
-                    "Pizza 3", "10:00 - 23:00", "4.9", "Min - $35"));
+                    "Pizza 3", "10:00 - 23:00", "4.9", "35"));
             homeVerModels.add(new HomeVerModel(R.drawable.pizza4,
-                    "Pizza 4", "10:00 - 23:00", "4.9", "Min - $35"));
+                    "Pizza 4", "10:00 - 23:00", "4.9", "35"));
 
             updateVerticalRec.callBack(position, homeVerModels);
             check = false;
@@ -72,13 +72,13 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
                     homeVerModels.add(new HomeVerModel(R.drawable.pizza1,
-                            "Pizza 1","10:00 - 23:00","4.9","Min - $35"));
+                            "Pizza 1","10:00 - 23:00","3.9","35"));
                     homeVerModels.add(new HomeVerModel(R.drawable.pizza2,
-                            "Pizza 2","10:00 - 23:00","4.9","Min - $35"));
+                            "Pizza 2","10:00 - 23:00","4.9","55"));
                     homeVerModels.add(new HomeVerModel(R.drawable.pizza3,
-                            "Pizza 3","10:00 - 23:00","4.9","Min - $35"));
+                            "Pizza 3","10:00 - 23:00","3.9","45"));
                     homeVerModels.add(new HomeVerModel(R.drawable.pizza4,
-                            "Pizza 4","10:00 - 23:00","4.9","Min - $35"));
+                            "Pizza 4","10:00 - 23:00","4.7","36"));
 
                     updateVerticalRec.callBack(position,homeVerModels);
 
@@ -87,13 +87,13 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
                     homeVerModels.add(new HomeVerModel(R.drawable.burger2,
-                            "Burger 1","10:00 - 23:00","4.9","Min - $35"));
+                            "Burger 1","10:00 - 23:00","3.9","35"));
                     homeVerModels.add(new HomeVerModel(R.drawable.burger4,
-                            "Burger 2","10:00 - 23:00","4.9","Min - $35"));
+                            "Burger 2","10:00 - 23:00","4.5","33"));
                     homeVerModels.add(new HomeVerModel(R.drawable.burger2,
-                            "Burger 3","10:00 - 23:00","4.9","Min - $35"));
+                            "Burger 3","10:00 - 23:00","4.3","32"));
                     homeVerModels.add(new HomeVerModel(R.drawable.burger4,
-                            "Burger 4","10:00 - 23:00","4.9","Min - $35"));
+                            "Burger 4","10:00 - 23:00","4.1","15"));
 
                     updateVerticalRec.callBack(position,homeVerModels);
 
@@ -102,13 +102,13 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
                     homeVerModels.add(new HomeVerModel(R.drawable.fries1,
-                            "Fries 1","10:00 - 23:00","4.9","Min - $35"));
+                            "Fries 1","10:00 - 23:00","4.9","45"));
                     homeVerModels.add(new HomeVerModel(R.drawable.fries2,
-                            "Fries 2","10:00 - 23:00","4.9","Min - $35"));
+                            "Fries 2","10:00 - 23:00","2.9","35"));
                     homeVerModels.add(new HomeVerModel(R.drawable.fries3,
-                            "Fries 3","10:00 - 23:00","4.9","Min - $35"));
+                            "Fries 3","10:00 - 23:00","4.8","34"));
                     homeVerModels.add(new HomeVerModel(R.drawable.fries4,
-                            "Fries 4","10:00 - 23:00","4.9","Min - $35"));
+                            "Fries 4","10:00 - 23:00","3.9","32"));
                     updateVerticalRec.callBack(position,homeVerModels);
 
                 }
@@ -116,13 +116,13 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
                     homeVerModels.add(new HomeVerModel(R.drawable.icecream1,
-                            "Ice Cream 1","10:00 - 23:00","4.9","Min - $35"));
+                            "Ice Cream 1","10:00 - 23:00","4.5","55"));
                     homeVerModels.add(new HomeVerModel(R.drawable.icecream2,
-                            "Ice Cream 2","10:00 - 23:00","4.9","Min - $35"));
+                            "Ice Cream 2","10:00 - 23:00","3.9","34"));
                     homeVerModels.add(new HomeVerModel(R.drawable.icecream3,
-                            "Ice Cream 3","10:00 - 23:00","4.9","Min - $35"));
+                            "Ice Cream 3","10:00 - 23:00","4.5","45"));
                     homeVerModels.add(new HomeVerModel(R.drawable.icecream4,
-                            "Ice Cream 4","10:00 - 23:00","4.9","Min - $35"));
+                            "Ice Cream 4","10:00 - 23:00","4.3","35"));
 
                     updateVerticalRec.callBack(position,homeVerModels);
 
@@ -131,13 +131,13 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
                     homeVerModels.add(new HomeVerModel(R.drawable.sandwich1,
-                            "Sandwich 1","10:00 - 23:00","4.9","Min - $35"));
+                            "Sandwich 1","10:00 - 23:00","2.9","35"));
                     homeVerModels.add(new HomeVerModel(R.drawable.sandwich2,
-                            "Sandwich 2","10:00 - 23:00","4.9","Min - $35"));
+                            "Sandwich 2","10:00 - 23:00","3.9","45"));
                     homeVerModels.add(new HomeVerModel(R.drawable.sandwich3,
-                            "Sandwich 3","10:00 - 23:00","4.9","Min - $35"));
+                            "Sandwich 3","10:00 - 23:00","4.9","65"));
                     homeVerModels.add(new HomeVerModel(R.drawable.sandwich4,
-                            "Sandwich 4","10:00 - 23:00","4.9","Min - $35"));
+                            "Sandwich 4","10:00 - 23:00","4.2","34"));
 
                     updateVerticalRec.callBack(position,homeVerModels);
 
@@ -165,6 +165,7 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
     public int getItemCount() {
         return list.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 

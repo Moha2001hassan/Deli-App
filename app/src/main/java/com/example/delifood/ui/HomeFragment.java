@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.delifood.Adapters.HomeHorAdapter;
 import com.example.delifood.Adapters.HomeVerAdapter;
 import com.example.delifood.Adapters.UpdateVerticalRec;
+import com.example.delifood.Helper.ManagementCart;
+import com.example.delifood.Models.FoodModel;
 import com.example.delifood.Models.HomeHorModel;
 import com.example.delifood.Models.HomeVerModel;
 import com.example.delifood.R;
@@ -23,21 +26,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment implements UpdateVerticalRec {
-// _____________Horizontal________________
-    ArrayList<HomeHorModel> homeHorModelList;
-    HomeHorAdapter homeHorAdapter;
-// _____________Vertical________________
-    ArrayList<HomeVerModel> homeVerModelList;
-    HomeVerAdapter homeVerAdapter;
 
     private FragmentHomeBinding binding;
+    ArrayList<HomeHorModel> homeHorModelList;
+    HomeHorAdapter homeHorAdapter;
+    ArrayList<HomeVerModel> homeVerModelList;
+    HomeVerAdapter homeVerAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
-//_____________________________________Horizontal RV_____________________________________
+        horizontalRV();
+        verticalRV();
+
+        return binding.getRoot();
+    }
+
+    public void horizontalRV(){
         homeHorModelList = new ArrayList<>();
 
         homeHorModelList.add(new HomeHorModel(R.drawable.pizza,"Pizza"));
@@ -53,22 +60,16 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
         binding.homeHorRv.setNestedScrollingEnabled(false);
         binding.homeHorRv.setLayoutManager(new LinearLayoutManager(
                 binding.getRoot().getContext(), RecyclerView.HORIZONTAL,false));
+    }
 
-//______________________________________Vertical RV____________________________________
+    public void verticalRV(){
         homeVerModelList = new ArrayList<>();
-
-
-
-
         homeVerAdapter = new HomeVerAdapter(getActivity(),homeVerModelList);
 
         binding.homeVerRv.setAdapter(homeVerAdapter);
-//        binding.homeVerRv.setHasFixedSize(true);
-//        binding.homeVerRv.setNestedScrollingEnabled(false);
         binding.homeVerRv.setLayoutManager(new LinearLayoutManager(
                 binding.getRoot().getContext(), RecyclerView.VERTICAL,false));
 
-        return binding.getRoot();
     }
 
     @Override

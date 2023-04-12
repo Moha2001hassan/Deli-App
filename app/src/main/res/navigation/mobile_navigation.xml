@@ -15,7 +15,7 @@
         android:id="@+id/nav_daily_meal"
         android:name="com.example.delifood.ui.DailyMealFragment"
         android:label="@string/daily_meal"
-        tools:layout="@layout/daily_meal_fragment" />
+        tools:layout="@layout/fragment_dailyfrag" />
 
     <fragment
         android:id="@+id/nav_favourite"
