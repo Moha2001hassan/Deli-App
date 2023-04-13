@@ -30,6 +30,7 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="33sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +97,8 @@
         android:text="@string/sign_in"
         android:textAllCaps="false"
         android:textStyle="bold"
+        android:onClick="home"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
