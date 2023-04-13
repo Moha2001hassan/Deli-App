@@ -53,8 +53,6 @@ public class Recipe_Activity extends AppCompatActivity {
     private JSONArray ingredientsArr;
     private List<Ingredient> ingredientsLst = new ArrayList<Ingredient>();
     private RecyclerView myrv;
-//    private FloatingActionButton fab;
-//    private boolean like = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,57 +73,14 @@ public class Recipe_Activity extends AppCompatActivity {
         instructions = findViewById(R.id.recipe_instructions);
 
         getRecipeData(recipeId);
-//        mRootRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Log.i("mRootRef", String.valueOf(dataSnapshot));
-//                if (dataSnapshot.getValue() != null) {
-//                    fab.setImageResource(R.drawable.ic_favorite_black_24dp);
-//                    like = true;
-//                }
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
 
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                like = !like;
-//                mRootRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                        if (like) {
-//                            fab.setImageResource(R.drawable.ic_favorite_black_24dp);
-//                            Map favorites = new HashMap();
-//                            favorites.put("img", intent.getExtras().getString("img"));
-//                            favorites.put("title", intent.getExtras().getString("title"));
-//                            mRootRef.setValue(favorites);
-//                        } else {
-//                            try {
-//                                fab.setImageResource(R.drawable.ic_favorite_border_black_24dp);
-//                                mRootRef.setValue(null);
-//                            } catch (Exception e) {
-//                            }
-//                        }
-//                    }
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError databaseError) {
-//                    }
-//                });
-//            }
-//        });
-//
         myrv = findViewById(R.id.recipe_ingredients_rv);
-        //myrv.setLayoutManager(new GridLayoutManager(this, 2));
         myrv.setLayoutManager(new LinearLayoutManager(this,
                 RecyclerView.HORIZONTAL,false));
     }
 
     private void getRecipeData(final String recipeId) {
-        String URL = " https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=c957b6816ba048139fbc25a67d2cff33";
+        String URL = " https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=4e42133b220146308cb7b07bea2bdd5d";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
             Request.Method.GET, URL, null,

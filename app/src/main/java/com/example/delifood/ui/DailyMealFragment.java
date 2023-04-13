@@ -102,7 +102,7 @@ public class DailyMealFragment extends Fragment implements View.OnClickListener 
     private void searchRecipe(String search) {
         searchRecipe = new ArrayList<Recipe>();
         String URL="https://api.spoonacular.com/recipes/search?query=" + search +
-                "&number=30&instructionsRequired=true&apiKey=c957b6816ba048139fbc25a67d2cff33";
+                "&number=30&instructionsRequired=true&apiKey=4e42133b220146308cb7b07bea2bdd5d";
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
@@ -149,7 +149,7 @@ public class DailyMealFragment extends Fragment implements View.OnClickListener 
     }
 
     private void getRandomRecipes() {
-        String URL = " https://api.spoonacular.com/recipes/random?number=30&instructionsRequired=true&apiKey=c957b6816ba048139fbc25a67d2cff33";
+        String URL = " https://api.spoonacular.com/recipes/random?number=30&instructionsRequired=true&apiKey=4e42133b220146308cb7b07bea2bdd5d";
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
             Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
