@@ -25,6 +25,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".Activities.Recipe_Activity"
+            android:exported="false" />
+
+        <activity
             android:name=".Activities.WelcomeActivity"
             android:exported="true">
 

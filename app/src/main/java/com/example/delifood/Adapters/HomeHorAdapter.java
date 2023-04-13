@@ -180,4 +180,5 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
             cardView = itemView.findViewById(R.id.cardView);
         }
     }
+
 }

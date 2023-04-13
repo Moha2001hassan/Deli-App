@@ -9,19 +9,24 @@
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable-v24/btn_design.xml" value="0.1475" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable-v24/ic_restaurant_black_24dp.xml" value="0.1475" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable-v24/ic_search.xml" value="0.1475" />
+        <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable-v24/ic_spa_black_24dp.xml" value="0.1755" />
+        <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable-v24/ic_timer.xml" value="0.1755" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable/btn_bg_design.xml" value="0.163" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable/card_background.xml" value="0.144" />
+        <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable/round_bg.xml" value="0.1755" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable/search_bar_background.xml" value="0.204" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable/search_btn.xml" value="0.163" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/drawable/yellow_bar.xml" value="0.144" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/activity_detailed_daily_meal.xml" value="0.264" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/activity_recipe_.xml" value="0.264" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/activity_registration.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/activity_welcome.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/cardview_item_recipe.xml" value="0.25" />
+        <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/cardview_recipe.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/content_main.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/daily_cardview.xml" value="0.264" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/daily_meal_fragment.xml" value="0.25" />
@@ -40,6 +45,7 @@
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/fragment_third.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/home_horizontal_item.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/home_vertical_item.xml" value="0.25" />
+        <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/item_ingredient.xml" value="0.536" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/mycart_item.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
         <entry key="..\:/APPs/Android Studio projects - java/DeliFood_x/app/src/main/res/layout/viewholder_cart.xml" value="0.25" />

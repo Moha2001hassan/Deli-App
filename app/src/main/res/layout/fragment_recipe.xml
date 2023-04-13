@@ -149,6 +149,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_design"
                 android:text="@string/lunch"
+                android:textAllCaps="false"
                 android:textColor="@color/black" />
 
             <Button
@@ -159,6 +160,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_design"
                 android:text="@string/dinner"
+                android:textAllCaps="false"
                 android:textColor="@color/black" />
 
         </LinearLayout>

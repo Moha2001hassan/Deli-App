@@ -1,6 +1,7 @@
 package com.example.delifood.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.delifood.API.Recipe;
 //import com.example.delifood.Activities.DetailedDailyMealActivity;
+import com.example.delifood.Activities.Recipe_Activity;
 import com.example.delifood.R;
 import com.squareup.picasso.Picasso;
 
@@ -48,6 +50,18 @@ public class DailyMealAdapter extends RecyclerView.Adapter<DailyMealAdapter.MyVi
         } else{
             Picasso.get().load(mData.get(position).getThumbnail()).into(holder.img_recipe_thumbnail);
         }
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(mContext, Recipe_Activity.class);
+                intent.putExtra("id",mData.get(position).getId());
+                intent.putExtra("title",mData.get(position).getTitle());
+                intent.putExtra("img",mData.get(position).getThumbnail());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

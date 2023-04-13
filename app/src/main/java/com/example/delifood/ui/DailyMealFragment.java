@@ -93,8 +93,8 @@ public class DailyMealFragment extends Fragment implements View.OnClickListener 
                 return false;
             }
         });
-        getActivity().getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+//        getActivity().getWindow().setSoftInputMode(
+//                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         return RootView;
     }

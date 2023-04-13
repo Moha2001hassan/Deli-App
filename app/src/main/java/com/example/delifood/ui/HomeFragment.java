@@ -69,7 +69,6 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
         binding.homeVerRv.setAdapter(homeVerAdapter);
         binding.homeVerRv.setLayoutManager(new LinearLayoutManager(
                 binding.getRoot().getContext(), RecyclerView.VERTICAL,false));
-
     }
 
     @Override
