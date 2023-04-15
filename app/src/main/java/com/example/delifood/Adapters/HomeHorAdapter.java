@@ -28,7 +28,8 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
     boolean select = true;
     int row_index = -1;
 
-    public HomeHorAdapter(UpdateVerticalRec updateVerticalRec, Activity activity, ArrayList<HomeHorModel> list) {
+    public HomeHorAdapter(UpdateVerticalRec updateVerticalRec, Activity activity,
+                          ArrayList<HomeHorModel> list) {
         this.updateVerticalRec = updateVerticalRec;
         this.activity = activity;
         this.list = list;
@@ -49,17 +50,10 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
         holder.textView.setText(list.get(position).getName());
 
         if(check) {
-            ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-            homeVerModels.add(new HomeVerModel(R.drawable.pizza1,
-                    "Pizza 1", "10:00 - 23:00", "4.9", "35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.pizza2,
-                    "Pizza 2", "10:00 - 23:00", "4.9", "35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.pizza3,
-                    "Pizza 3", "10:00 - 23:00", "4.9", "35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.pizza4,
-                    "Pizza 4", "10:00 - 23:00", "4.9", "35"));
 
-            updateVerticalRec.callBack(position, homeVerModels);
+            ArrayList<HomeVerModel> pizza = addPizza();
+
+            updateVerticalRec.callBack(position, pizza);
             check = false;
         }
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -70,62 +64,23 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                 if(position == 0){
 
-                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.pizza1,
-                            "Pizza 1","10:00 - 23:00","3.9","35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.pizza2,
-                            "Pizza 2","10:00 - 23:00","4.9","55"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.pizza3,
-                            "Pizza 3","10:00 - 23:00","3.9","45"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.pizza4,
-                            "Pizza 4","10:00 - 23:00","4.7","36"));
-
-                    updateVerticalRec.callBack(position,homeVerModels);
-
+                    ArrayList<HomeVerModel> pizza = addPizza();
+                    updateVerticalRec.callBack(position,pizza);
                 }
                 else if (position == 1){
 
-                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.burger2,
-                            "Burger 1","10:00 - 23:00","3.9","35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.burger4,
-                            "Burger 2","10:00 - 23:00","4.5","33"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.burger2,
-                            "Burger 3","10:00 - 23:00","4.3","32"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.burger4,
-                            "Burger 4","10:00 - 23:00","4.1","15"));
-
-                    updateVerticalRec.callBack(position,homeVerModels);
-
+                    ArrayList<HomeVerModel> burger = addBurger();
+                    updateVerticalRec.callBack(position,burger);
                 }
                 else if(position == 2) {
 
-                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.fries1,
-                            "Fries 1","10:00 - 23:00","4.9","45"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.fries2,
-                            "Fries 2","10:00 - 23:00","2.9","35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.fries3,
-                            "Fries 3","10:00 - 23:00","4.8","34"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.fries4,
-                            "Fries 4","10:00 - 23:00","3.9","32"));
-                    updateVerticalRec.callBack(position,homeVerModels);
-
+                    ArrayList<HomeVerModel> frise = addFrise();
+                    updateVerticalRec.callBack(position,frise);
                 }
                 else if(position == 3) {
 
-                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.icecream1,
-                            "Ice Cream 1","10:00 - 23:00","4.5","55"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.icecream2,
-                            "Ice Cream 2","10:00 - 23:00","3.9","34"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.icecream3,
-                            "Ice Cream 3","10:00 - 23:00","4.5","45"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.icecream4,
-                            "Ice Cream 4","10:00 - 23:00","4.3","35"));
-
-                    updateVerticalRec.callBack(position,homeVerModels);
-
+                    ArrayList<HomeVerModel> icecream = addIceCream();
+                    updateVerticalRec.callBack(position,icecream);
                 }
                 else if(position == 4) {
 
@@ -180,5 +135,70 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
             cardView = itemView.findViewById(R.id.cardView);
         }
     }
+
+    public ArrayList<HomeVerModel> addPizza(){
+        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+        homeVerModels.add(new HomeVerModel(R.drawable.pizza1,
+                "Pepperoni Pizza", "30 min", "3.9", "35"));
+        homeVerModels.add(new HomeVerModel(R.drawable.pizza2,
+                "Meat Pizza", "40 min", "4.5", "30"));
+        homeVerModels.add(new HomeVerModel(R.drawable.pizza3,
+                "Margherita Pizza", "35 min", "4.9", "45"));
+        homeVerModels.add(new HomeVerModel(R.drawable.pizza4,
+                "Buffalo Pizza", "34 min", "4.1", "55"));
+        homeVerModels.add(new HomeVerModel(R.drawable.pizza1,
+                "Pepperoni Pizza", "30 min", "3.3", "45"));
+        homeVerModels.add(new HomeVerModel(R.drawable.pizza2,
+                "Meat Pizza", "40 min", "4.3", "40"));
+        return homeVerModels;
+    }
+
+    public ArrayList<HomeVerModel> addBurger(){
+        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+        homeVerModels.add(new HomeVerModel(R.drawable.burger2,
+                "Turkey burger", "30 min", "3.9", "35"));
+        homeVerModels.add(new HomeVerModel(R.drawable.burger4,
+                "Portobello burger", "40 min", "4.5", "30"));
+        homeVerModels.add(new HomeVerModel(R.drawable.burger2,
+                "Veggie burger", "35 min", "4.9", "45"));
+        homeVerModels.add(new HomeVerModel(R.drawable.burger4,
+                "Salmon burger", "34 min", "4.1", "55"));
+        return homeVerModels;
+    }
+
+    public ArrayList<HomeVerModel> addFrise(){
+        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+        homeVerModels.add(new HomeVerModel(R.drawable.fries1,
+                "Baked Fries", "30 min", "3.9", "35"));
+        homeVerModels.add(new HomeVerModel(R.drawable.fries2,
+                "Poutine Fries", "40 min", "4.5", "30"));
+        homeVerModels.add(new HomeVerModel(R.drawable.fries3,
+                "Sweet Potato", "35 min", "4.9", "45"));
+        homeVerModels.add(new HomeVerModel(R.drawable.fries4,
+                "Sautéed French", "34 min", "4.1", "55"));
+        homeVerModels.add(new HomeVerModel(R.drawable.fries1,
+                "Waffle Fries", "30 min", "3.3", "45"));
+        homeVerModels.add(new HomeVerModel(R.drawable.fries2,
+                "Steak Fries", "40 min", "4.3", "40"));
+        return homeVerModels;
+    }
+
+    public ArrayList<HomeVerModel> addIceCream(){
+        ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+        homeVerModels.add(new HomeVerModel(R.drawable.icecream4,
+                "Frozen Yogurt", "30 min", "3.9", "35"));
+        homeVerModels.add(new HomeVerModel(R.drawable.icecream2,
+                "Soft Serve", "40 min", "4.5", "30"));
+        homeVerModels.add(new HomeVerModel(R.drawable.icecream3,
+                "Rolled IceCream", "35 min", "4.9", "45"));
+        homeVerModels.add(new HomeVerModel(R.drawable.icecream4,
+                "Kulfi", "34 min", "4.1", "55"));
+        homeVerModels.add(new HomeVerModel(R.drawable.icecream1,
+                "American ice cream", "30 min", "3.3", "45"));
+        homeVerModels.add(new HomeVerModel(R.drawable.icecream2,
+                "Frozen Yogurt", "40 min", "4.3", "40"));
+        return homeVerModels;
+    }
+
 
 }

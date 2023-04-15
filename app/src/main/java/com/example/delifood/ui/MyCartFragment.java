@@ -1,20 +1,24 @@
 package com.example.delifood.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.delifood.Adapters.CartAdapter;
 import com.example.delifood.Helper.ManagementCart;
 import com.example.delifood.Interface.ChangeNumberItemsListener;
+import com.example.delifood.R;
 import com.example.delifood.databinding.FragmentCart1Binding;
 
 
@@ -46,6 +50,15 @@ public class MyCartFragment extends Fragment {
 
         initList();
         calculateCard();
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(binding.getRoot().getContext(),
+                        "The Order is Done...", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 
     private void initList() {

@@ -21,18 +21,20 @@
         app:srcCompat="@drawable/man" />
 
     <TextView
+        android:id="@+id/name_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/m_h_m"
+        android:text="Mohamed Hassan"
         android:textStyle="bold"
         android:layout_marginLeft="11dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/email_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
+        android:layout_marginLeft="11dp"
         android:text="@string/mohamedhassan_gmail_com" />
 </LinearLayout>

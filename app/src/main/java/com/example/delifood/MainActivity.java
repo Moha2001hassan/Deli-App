@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.delifood.Activities.LoginActivity;
+import com.example.delifood.Activities.WelcomeActivity;
 import com.example.delifood.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -22,26 +26,51 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    Context context;
+    FirebaseAuth auth;
     Button logOut_btn;
+    TextView name_user, email_user;
+    FirebaseUser user;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setSupportActionBar(binding.appBarMain.toolbar);
 
+        auth = FirebaseAuth.getInstance();
+        logOut_btn = findViewById(R.id.logOut_btn);
+        name_user = findViewById(R.id.name_user);
+        email_user = findViewById(R.id.email_user);
+        user = auth.getCurrentUser();
+
+//        if (user == null){
+//            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
+//        else {
+//            email_user.setText(user.getEmail());
+//        }
+
+
+        //Log Out
+        logOut_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
+                finish();
+            }
+        });
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_daily_meal, R.id.nav_favourite, R.id.nav_my_cart)
+                R.id.nav_home, R.id.nav_daily_meal, R.id.nav_my_cart)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this,
@@ -49,14 +78,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        logOut_btn = findViewById(R.id.logOut_btn);
-        logOut_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,LoginActivity.class));
-                //Objects.requireNonNull(getActivity()).finish();
-            }
-        });
+
     }
 
     @Override
@@ -73,12 +95,4 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-//    private void sendToLogin(View view) {
-//        Intent loginIntent = new Intent(binding.getRoot().getContext(), LoginActivity.class);
-//        startActivity(loginIntent);
-//        //Objects.requireNonNull(MainActivity.this).finish();// The user can't come back to this page
-//    }
-
-
 }

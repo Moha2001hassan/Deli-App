@@ -30,7 +30,8 @@
 
         <activity
             android:name=".Activities.WelcomeActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.DeliFood.NoActionBar">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
