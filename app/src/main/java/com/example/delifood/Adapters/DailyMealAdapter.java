@@ -22,8 +22,8 @@ import java.util.List;
 
 public class DailyMealAdapter extends RecyclerView.Adapter<DailyMealAdapter.MyViewHolder>{
 
-    private Context mContext ;
-    private List<Recipe> mData ;
+    private Context mContext;
+    private List<Recipe> mData;
 
     public DailyMealAdapter(Context context, List<Recipe> list) {
         this.mContext = context;

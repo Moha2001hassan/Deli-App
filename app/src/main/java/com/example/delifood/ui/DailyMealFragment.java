@@ -157,7 +157,6 @@ public class DailyMealFragment extends Fragment implements View.OnClickListener 
                 public void onResponse(JSONObject response) {
                     try {
                         testArr = (JSONArray) response.get("recipes");
-
                         for (int i = 0; i < testArr.length(); i++) {
                             JSONObject jsonObject1;
                             jsonObject1 = testArr.getJSONObject(i);
@@ -172,7 +171,6 @@ public class DailyMealFragment extends Fragment implements View.OnClickListener 
                         DailyMealAdapter myAdapter = new DailyMealAdapter(getContext(), lstRecipe);
                         myrv.setAdapter(myAdapter);
                         myrv.setItemAnimator(new DefaultItemAnimator());
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

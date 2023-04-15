@@ -62,41 +62,48 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
                 row_index = position;
                 notifyDataSetChanged();
 
-                if(position == 0){
+                Thread th1 = new Thread(new Runnable() {
 
-                    ArrayList<HomeVerModel> pizza = addPizza();
-                    updateVerticalRec.callBack(position,pizza);
-                }
-                else if (position == 1){
+                    @Override
+                    public void run() {
+                        if(position == 0){
 
-                    ArrayList<HomeVerModel> burger = addBurger();
-                    updateVerticalRec.callBack(position,burger);
-                }
-                else if(position == 2) {
+                            ArrayList<HomeVerModel> pizza = addPizza();
+                            updateVerticalRec.callBack(position,pizza);
+                        }
+                        else if (position == 1){
 
-                    ArrayList<HomeVerModel> frise = addFrise();
-                    updateVerticalRec.callBack(position,frise);
-                }
-                else if(position == 3) {
+                            ArrayList<HomeVerModel> burger = addBurger();
+                            updateVerticalRec.callBack(position,burger);
+                        }
+                        else if(position == 2) {
 
-                    ArrayList<HomeVerModel> icecream = addIceCream();
-                    updateVerticalRec.callBack(position,icecream);
-                }
-                else if(position == 4) {
+                            ArrayList<HomeVerModel> frise = addFrise();
+                            updateVerticalRec.callBack(position,frise);
+                        }
+                        else if(position == 3) {
 
-                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.sandwich1,
-                            "Sandwich 1","10:00 - 23:00","2.9","35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.sandwich2,
-                            "Sandwich 2","10:00 - 23:00","3.9","45"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.sandwich3,
-                            "Sandwich 3","10:00 - 23:00","4.9","65"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.sandwich4,
-                            "Sandwich 4","10:00 - 23:00","4.2","34"));
+                            ArrayList<HomeVerModel> icecream = addIceCream();
+                            updateVerticalRec.callBack(position,icecream);
+                        }
+                        else if(position == 4) {
 
-                    updateVerticalRec.callBack(position,homeVerModels);
+                            ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+                            homeVerModels.add(new HomeVerModel(R.drawable.sandwich1,
+                                    "Sandwich 1","10:00 - 23:00","2.9","35"));
+                            homeVerModels.add(new HomeVerModel(R.drawable.sandwich2,
+                                    "Sandwich 2","10:00 - 23:00","3.9","45"));
+                            homeVerModels.add(new HomeVerModel(R.drawable.sandwich3,
+                                    "Sandwich 3","10:00 - 23:00","4.9","65"));
+                            homeVerModels.add(new HomeVerModel(R.drawable.sandwich4,
+                                    "Sandwich 4","10:00 - 23:00","4.2","34"));
 
-                }
+                            updateVerticalRec.callBack(position,homeVerModels);
+
+                        }
+                    }
+                });
+               th1.start();
             }
         });
 
