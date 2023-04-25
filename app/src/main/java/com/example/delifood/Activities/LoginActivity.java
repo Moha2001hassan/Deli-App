@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     Button button_login;
+
     EditText email_login, password_login;
     TextView to_register_txt;
     ProgressBar progressBar;
@@ -50,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
+
         button_login = findViewById(R.id.button_login);
         email_login = findViewById(R.id.email_login);
         password_login = findViewById(R.id.pass_login);

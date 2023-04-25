@@ -56,6 +56,8 @@ public class MyCartFragment extends Fragment {
                 Toast.makeText(binding.getRoot().getContext(),
                         "The Order is Done...", Toast.LENGTH_SHORT).show();
 
+                
+
             }
         });
 

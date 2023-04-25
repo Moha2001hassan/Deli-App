@@ -3,7 +3,10 @@ package com.example.delifood.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -24,6 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class RegistrationActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+
     Button button_register;
     EditText email_register, password_register, name_register;
     ProgressBar progressBar;
@@ -78,26 +82,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     return;
                 }
 
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(RegistrationActivity.this,
-                                            "Account created.", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(RegistrationActivity.this,LoginActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                }
-                                else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(RegistrationActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-
+                createUser(name,email,password);
 
             }
         });
@@ -106,6 +91,43 @@ public class RegistrationActivity extends AppCompatActivity {
     public void login(View view) {
         startActivity(new Intent(RegistrationActivity.this,LoginActivity.class));
         finish();
+    }
+
+    public void sharedPreferences(String name, String email){
+
+        SharedPreferences sharedPref = getSharedPreferences("MY_PREFS", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("EMAIL_KEY", email);
+        editor.putString("NAME_KEY", name);
+        editor.apply();
+    }
+
+    public void createUser(String name, String email, String password){
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressBar.setVisibility(View.GONE);
+                        if (task.isSuccessful()) {
+
+                            sharedPreferences(name,email);
+
+                            Toast.makeText(RegistrationActivity.this,
+                                    "Account created.", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegistrationActivity.this,LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(RegistrationActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+
     }
 
 }

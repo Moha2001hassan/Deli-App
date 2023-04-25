@@ -15,32 +15,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DeliFood"
         tools:targetApi="31">
-
         <activity
-            android:name=".Activities.RegistrationActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Activities.LoginActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Activities.Recipe_Activity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Activities.WelcomeActivity"
-            android:exported="true"
-            android:theme="@style/Theme.DeliFood.NoActionBar">
-
+            android:name=".Activities.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Recipe_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.WelcomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.DeliFood.NoActionBar">
 
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true"

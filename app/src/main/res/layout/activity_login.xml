@@ -14,7 +14,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bg2"
         android:textColorHint="#BAB1B1"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

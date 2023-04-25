@@ -36,8 +36,6 @@
                     android:layout_gravity="center_horizontal"
                     app:srcCompat="@drawable/logo_delifoof" />
 
-
-
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardSearch"
                     android:layout_width="match_parent"

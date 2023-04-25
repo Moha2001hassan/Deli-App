@@ -2,10 +2,14 @@ package com.example.delifood;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.delifood.Activities.LoginActivity;
@@ -28,8 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     Button logOut_btn;
-    TextView name_user, email_user;
+    ImageView imageView;
+    static int REQUESCODE = 1;
+    Uri pickedImgUri;
     FirebaseUser user;
+
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -39,23 +46,12 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarMain.toolbar);
-
         auth = FirebaseAuth.getInstance();
-        logOut_btn = findViewById(R.id.logOut_btn);
-        name_user = findViewById(R.id.name_user);
-        email_user = findViewById(R.id.email_user);
         user = auth.getCurrentUser();
 
-//        if (user == null){
-//            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
-//        else {
-//            email_user.setText(user.getEmail());
-//        }
+        updateNavHeader();
 
-
+        logOut_btn = findViewById(R.id.logOut_btn);
         //Log Out
         logOut_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
     }
 
     @Override
@@ -95,4 +90,23 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
+    public void updateNavHeader() {
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+
+        TextView navUsername = headerView.findViewById(R.id.name_user);
+        TextView navUserMail = headerView.findViewById(R.id.email_user);
+        //ImageView navUserPhot = headerView.findViewById(R.id.nav_user_photo);
+
+        SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
+        String name = preferences.getString("NAME_KEY", "");
+        String email = preferences.getString("EMAIL_KEY", "");
+
+        navUsername.setText(name);
+        navUserMail.setText(email);
+    }
 }
+
