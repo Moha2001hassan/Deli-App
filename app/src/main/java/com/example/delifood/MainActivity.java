@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     Button logOut_btn;
-    ImageView imageView;
-    static int REQUESCODE = 1;
-    Uri pickedImgUri;
+//    ImageView imageView;
+//    static int REQUESCODE = 1;
+//    Uri pickedImgUri;
     FirebaseUser user;
 
     private AppBarConfiguration mAppBarConfiguration;

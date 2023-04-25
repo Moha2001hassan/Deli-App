@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import com.example.delifood.Adapters.CartAdapter;
 import com.example.delifood.Helper.ManagementCart;
 import com.example.delifood.Interface.ChangeNumberItemsListener;
+import com.example.delifood.MainActivity;
 import com.example.delifood.R;
 import com.example.delifood.databinding.FragmentCart1Binding;
 
@@ -56,7 +58,13 @@ public class MyCartFragment extends Fragment {
                 Toast.makeText(binding.getRoot().getContext(),
                         "The Order is Done...", Toast.LENGTH_SHORT).show();
 
-                
+                startActivity(new Intent(getActivity(), MainActivity.class));
+//                Fragment fragment = new HomeFragment();
+//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.id.container,fragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
 
             }
         });
